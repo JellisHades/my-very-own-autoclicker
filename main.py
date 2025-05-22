@@ -5,9 +5,11 @@ import threading
 from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 from tkinter import ttk 
+import sys
+import os
 
-OUTPUT_PATH = "c:\\Users\\Windows\\OneDrive\\Desktop\\Projects\\Macro\\AutoClicker"
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Windows\OneDrive\Desktop\Projects\Macro\AutoClicker\build")
+OUTPUT_PATH = sys.path[0]
+ASSETS_PATH = os.path.join(OUTPUT_PATH, "build")
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
